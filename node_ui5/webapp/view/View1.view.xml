@@ -1,0 +1,45 @@
+<mvc:View  controllerName="nodeui5.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m" xmlns:core="sap.ui.core" >
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table items="{EmployeeModel>/empItems}">
+                <columns>
+                    <Column >
+                        <Label text="ID"/>
+                    </Column>
+                    <Column >
+                        <Label text="Name"/>
+                    </Column>
+                    <Column >
+                        <Label text="Salary"/>
+                    </Column>
+                    <Column >
+                        <Label text="Actions"/>
+                    </Column>
+                </columns>
+                <ColumnListItem >
+                    <cells>
+                        <Text text="{EmployeeModel>e_Id}" />
+                        <Text text="{EmployeeModel>e_Name}" />
+                        <Text text="{EmployeeModel>e_Salary}" />
+                        <HBox wrap="Wrap" alignItems="End">
+                             <core:Icon src="sap-icon://delete" press="onDelete" class="sapUiTinyMargin" />
+                             <core:Icon src="sap-icon://edit" press="onEdit" class="sapUiTinyMargin" />
+                        </HBox>
+                    </cells>
+                </ColumnListItem>
+            </Table>
+
+            <f:SimpleForm editable="true">
+            <Label text="ID"/>
+            <Input id="emp_id" ></Input>
+            <Label text="Name"/>
+            <Input id="Name"></Input>
+            <Label text="Salary"/>
+            <Input id="Salary"></Input>
+            </f:SimpleForm>
+            <Button text="Submit" press="onSubmit"></Button>
+        </content>
+    </Page>
+</mvc:View>
